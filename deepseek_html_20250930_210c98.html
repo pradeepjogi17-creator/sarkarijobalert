@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarkari Job Alert - Government Jobs, Results, Admit Cards</title>
+    <meta name="description" content="Get latest updates on Government Jobs, Results, Admit Cards, Answer Keys, Syllabus and Notifications. Stay updated with Sarkari Job Alert.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables for Theme */
+        :root {
+            --primary-red: #d32f2f;
+            --dark-red: #b71c1c;
+            --black: #212121;
+            --white: #ffffff;
+            --light-gray: #f5f5f5;
+            --medium-gray: #e0e0e0;
+            --dark-gray: #757575;
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        /* Dark Mode Variables */
+        .dark-mode {
+            --black: #f5f5f5;
+            --white: #121212;
+            --light-gray: #1e1e1e;
+            --medium-gray: #2d2d2d;
+            --dark-gray: #b0b0b0;
+        }
+
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+            transition: var(--transition);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: var(--primary-red);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background-color: var(--dark-red);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-red);
+            color: var(--black);
+        }
+
+        .card {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-bar {
+            background-color: var(--primary-red);
+            color: var(--white);
+            padding: 8px 0;
+            font-size: 0.9rem;
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ticker-container {
+            width: 80%;
+            overflow: hidden;
+            position: relative;
+            height: 20px;
+        }
+
+        .ticker {
+            position: absolute;
+            white-space: nowrap;
+            animation: ticker 30s linear infinite;
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--white);
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .header-main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary-red);
+            margin-left: 10px;
+        }
+
+        .logo span {
+            color: var(--black);
+        }
+
+        .search-bar {
+            display: flex;
+            width: 40%;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid var(--medium-gray);
+            border-radius: 4px 0 0 4px;
+            outline: none;
+        }
+
+        .search-bar button {
+            background-color: var(--primary-red);
+            color: var(--white);
+            border: none;
+            padding: 0 15px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        .user-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .notification-icon, .subscribe-btn {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            color: var(--black);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .notification-count {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: var(--primary-red);
+            color: var(--white);
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--primary-red);
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .nav-menu li {
+            position: relative;
+        }
+
+        .nav-menu a {
+            display: block;
+            padding: 15px 20px;
+            color: var(--white);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover {
+            background-color: var(--dark-red);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
+            color: var(--white);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        /* Latest Updates */
+        .latest-updates {
+            padding: 40px 0;
+        }
+
+        .updates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .update-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .update-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .update-header {
+            background-color: var(--primary-red);
+            color: var(--white);
+            padding: 10px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .update-date {
+            font-size: 0.8rem;
+        }
+
+        .update-content {
+            padding: 15px;
+        }
+
+        .update-content h3 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .update-content p {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        /* Quick Links */
+        .quick-links {
+            padding: 40px 0;
+            background-color: var(--light-gray);
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .link-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 20px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .link-card:hover {
+            background-color: var(--primary-red);
+            color: var(--white);
+        }
+
+        .link-card i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        /* Job Categories */
+        .job-categories {
+            padding: 40px 0;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .category-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 20px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .category-card i {
+            font-size: 2.5rem;
+            color: var(--primary-red);
+            margin-bottom: 15px;
+        }
+
+        .category-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .job-count {
+            background-color: var(--primary-red);
+            color: var(--white);
+            border-radius: 20px;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--black);
+            color: var(--white);
+            padding: 40px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--dark-gray);
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--dark-gray);
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: var(--dark-gray);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-red);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--dark-gray);
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .search-bar {
+                width: 50%;
+            }
+            
+            .nav-menu {
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-main {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .search-bar {
+                width: 100%;
+                order: 3;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .ticker-container {
+                width: 70%;
+            }
+            
+            .updates-grid, .links-grid, .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="top-bar">
+            <div class="container top-bar-content">
+                <div class="ticker-container">
+                    <div class="ticker">
+                        <strong>Latest:</strong> SSC CGL 2023 Notification Released | IBPS PO 2023 Apply Online | UPSC Civil Services Prelims Result Declared
+                    </div>
+                </div>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div class="container header-main">
+            <div class="logo">
+                <i class="fas fa-briefcase" style="font-size: 2rem; color: var(--primary-red);"></i>
+                <h1>Sarkari<span>JobAlert</span></h1>
+            </div>
+            
+            <div class="search-bar">
+                <input type="text" placeholder="Search for jobs, exams, notifications...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            
+            <div class="user-actions">
+                <button class="notification-icon">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-count">3</span>
+                </button>
+                <button class="subscribe-btn btn">Subscribe</button>
+            </div>
+        </div>
+        
+        <nav>
+            <div class="container">
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#"><i class="fas fa-briefcase"></i> Latest Jobs</a></li>
+                    <li><a href="#"><i class="fas fa-poll"></i> Results</a></li>
+                    <li><a href="#"><i class="fas fa-id-card"></i> Admit Card</a></li>
+                    <li><a href="#"><i class="fas fa-key"></i> Answer Key</a></li>
+                    <li><a href="#"><i class="fas fa-book"></i> Syllabus</a></li>
+                    <li><a href="#"><i class="fas fa-graduation-cap"></i> Admission</a></li>
+                    <li><a href="#"><i class="fas fa-phone"></i> Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Your Gateway to Government Jobs</h2>
+            <p>Get the latest updates on Sarkari Naukri, Results, Admit Cards, Answer Keys and more. Stay ahead in your government job preparation.</p>
+            <a href="#" class="btn">Explore Latest Jobs</a>
+        </div>
+    </section>
+
+    <!-- Latest Updates Section -->
+    <section class="latest-updates">
+        <div class="container">
+            <h2 class="section-title">Latest Updates</h2>
+            <div class="updates-grid">
+                <!-- Update Card 1 -->
+                <div class="update-card">
+                    <div class="update-header">
+                        <span>New Job</span>
+                        <span class="update-date">15 Oct 2023</span>
+                    </div>
+                    <div class="update-content">
+                        <h3>SSC CGL 2023 Notification Released</h3>
+                        <p>Combined Graduate Level Examination for various government departments.</p>
+                        <a href="#" class="btn">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Update Card 2 -->
+                <div class="update-card">
+                    <div class="update-header">
+                        <span>Result</span>
+                        <span class="update-date">12 Oct 2023</span>
+                    </div>
+                    <div class="update-content">
+                        <h3>UPSC Civil Services Prelims Result</h3>
+                        <p>Union Public Service Commission has declared prelims result.</p>
+                        <a href="#" class="btn">Check Result</a>
+                    </div>
+                </div>
+                
+                <!-- Update Card 3 -->
+                <div class="update-card">
+                    <div class="update-header">
+                        <span>Admit Card</span>
+                        <span class="update-date">10 Oct 2023</span>
+                    </div>
+                    <div class="update-content">
+                        <h3>IBPS PO 2023 Admit Card</h3>
+                        <p>Institute of Banking Personnel has released pre-exam training call letter.</p>
+                        <a href="#" class="btn">Download</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Links Section -->
+    <section class="quick-links">
+        <div class="container">
+            <h2 class="section-title">Quick Links</h2>
+            <div class="links-grid">
+                <a href="#" class="link-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Latest Jobs</h3>
+                </a>
+                <a href="#" class="link-card">
+                    <i class="fas fa-poll"></i>
+                    <h3>Results</h3>
+                </a>
+                <a href="#" class="link-card">
+                    <i class="fas fa-id-card"></i>
+                    <h3>Admit Cards</h3>
+                </a>
+                <a href="#" class="link-card">
+                    <i class="fas fa-key"></i>
+                    <h3>Answer Keys</h3>
+                </a>
+                <a href="#" class="link-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Syllabus</h3>
+                </a>
+                <a href="#" class="link-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Admission</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Job Categories Section -->
+    <section class="job-categories">
+        <div class="container">
+            <h2 class="section-title">Job Categories</h2>
+            <div class="categories-grid">
+                <div class="category-card">
+                    <i class="fas fa-university"></i>
+                    <h3>Banking Jobs</h3>
+                    <p>SBI, IBPS, RBI and other banking sector recruitment</p>
+                    <span class="job-count">42 Jobs</span>
+                </div>
+                
+                <div class="category-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Teaching Jobs</h3>
+                    <p>UPSC, State PSC, TGT, PGT and professor recruitment</p>
+                    <span class="job-count">28 Jobs</span>
+                </div>
+                
+                <div class="category-card">
+                    <i class="fas fa-stethoscope"></i>
+                    <h3>Medical Jobs</h3>
+                    <p>Doctors, Nurses, Pharmacist and medical staff recruitment</p>
+                    <span class="job-count">15 Jobs</span>
+                </div>
+                
+                <div class="category-card">
+                    <i class="fas fa-police-box"></i>
+                    <h3>Police/Defence</h3>
+                    <p>Army, Navy, Airforce, Police and paramilitary forces</p>
+                    <span class="job-count">36 Jobs</span>
+                </div>
+                
+                <div class="category-card">
+                    <i class="fas fa-train"></i>
+                    <h3>Railway Jobs</h3>
+                    <p>RRB NTPC, Group D, JE and other railway recruitment</p>
+                    <span class="job-count">24 Jobs</span>
+                </div>
+                
+                <div class="category-card">
+                    <i class="fas fa-desktop"></i>
+                    <h3>IT Jobs</h3>
+                    <p>Software, Hardware, Networking in government sector</p>
+                    <span class="job-count">18 Jobs</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Latest Jobs</a></li>
+                        <li><a href="#">Results</a></li>
+                        <li><a href="#">Admit Card</a></li>
+                        <li><a href="#">Answer Key</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Exam Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Banking Exams</a></li>
+                        <li><a href="#">SSC Exams</a></li>
+                        <li><a href="#">UPSC Exams</a></li>
+                        <li><a href="#">Railway Exams</a></li>
+                        <li><a href="#">State PSC</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Important Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Connect With Us</h3>
+                    <p>Subscribe to our newsletter for daily job alerts</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Sarkari Job Alert. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+
+        // Dark Mode Toggle
+        document.getElementById('themeToggle').addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const icon = this.querySelector('i');
+            if (document.body.classList.contains('dark-mode')) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            } else {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            }
+        });
+
+        // Notification Bell
+        document.querySelector('.notification-icon').addEventListener('click', function() {
+            alert('You have 3 new notifications!');
+        });
+
+        // Subscribe Button
+        document.querySelector('.subscribe-btn').addEventListener('click', function() {
+            const email = prompt('Enter your email to subscribe for daily job alerts:');
+            if (email) {
+                alert('Thank you for subscribing! You will receive job alerts soon.');
+            }
+        });
+    </script>
+</body>
+</html>
